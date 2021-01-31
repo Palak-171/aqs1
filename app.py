@@ -24,7 +24,7 @@ final_features = [np.array(int_features)]
 	#final_features =  [[52 , 2,  168, 76, 120, 80, 1,  0,  1, 4]] 
 	#[[48,	2,	169,	82,	150,	100,	0,	0,	1, 4	]]   
 	
-prediction=model.predict_proba(final_features)
+prediction=DTmodel.predict_proba(final_features)
 	#prediction= model.predict(final_features)
         #output='{0:.{1}f}'.format(prediction[0][1], 2)
    
