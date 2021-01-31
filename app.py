@@ -21,7 +21,7 @@ def predict():
     data4 = request.form['d']
     arr = np.array([[data1, data2, data3, data4]])
     pred = model.predict(arr)
-    return render_template('after.html', data=pred)
+    return render_template('index.html', data=pred)
 
 #int_features = [int(x) for x in request.form.values()]
 #final_features = [np.array(int_features)]
