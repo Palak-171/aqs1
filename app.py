@@ -26,7 +26,7 @@ final_features = [np.array(int_features)]
 	
 prediction=model.predict_proba(final_features)
 	#prediction= model.predict(final_features)
-output='{0:.{1}f}'.format(prediction[0][1], 2)
+        #output='{0:.{1}f}'.format(prediction[0][1], 2)
    
 return render_template('index.html', pred='Air Quality is :  {}'.format(prediction))
 	
