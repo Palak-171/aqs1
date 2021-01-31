@@ -15,27 +15,20 @@ def home():
 @app.route('/predict',methods=['POST','GET'])
 def predict():
     # receive the values send by user in three text boxes thru request object -> requesst.form.values()
-     data1 = request.form['a']
-    data2 = request.form['b']
-    data3 = request.form['c']
-    data4 = request.form['d']
-    arr = np.array([[data1, data2, data3, data4]])
-    pred = model.predict(arr)
-    return render_template('index.html', data=pred)
-
-#int_features = [int(x) for x in request.form.values()]
-#final_features = [np.array(int_features)]
+     
+int_features = [int(x) for x in request.form.values()]
+final_features = [np.array(int_features)]
 	
 	#print(final_features)
 	
 	#final_features =  [[52 , 2,  168, 76, 120, 80, 1,  0,  1, 4]] 
 	#[[48,	2,	169,	82,	150,	100,	0,	0,	1, 4	]]   
 	
-#prediction=model.predict_proba(final_features)
+prediction=model.predict_proba(final_features)
 	#prediction= model.predict(final_features)
-#output='{0:.{1}f}'.format(prediction[0][1], 2)
+output='{0:.{1}f}'.format(prediction[0][1], 2)
    
-#return render_template('index.html', pred='Air Quality is :  {}'.format(prediction))
+return render_template('index.html', pred='Air Quality is :  {}'.format(prediction))
 	
 	#return render_template('index.html', pred= final_features)
 
